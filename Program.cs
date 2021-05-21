@@ -63,7 +63,7 @@ MagicMoose();
 
 void MagicMoose()
 {
-
+    Console.Clear();
     MooseSays("Eh, You have a question for the enthusiatic moose? ");
     string question = Console.ReadLine();
     if (string.IsNullOrWhiteSpace(question))
@@ -75,6 +75,7 @@ void MagicMoose()
         Random i = new Random();
         int genRand = i.Next(0, responsearray.Length - 1);
         MooseSays(responsearray[genRand]);
+        System.Threading.Thread.Sleep(2000);
         MagicMoose();
     }
 }
