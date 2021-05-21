@@ -58,24 +58,23 @@ string[] responsearray = { "As I see it, yes.", "Ask again later.", "Better not 
 //         return false;
 //     }
 // }
-MooseSays("H I, I'M  E N T H U S I A S T I C !");
-MooseSays("I really am enthusiastic");
+
 MagicMoose();
 
 void MagicMoose()
 {
 
-    Console.Write("Eh, You have a question for the enthusiatic moose? ");
+    MooseSays("Eh, You have a question for the enthusiatic moose? ");
     string question = Console.ReadLine();
     if (string.IsNullOrWhiteSpace(question))
     {
-        System.Console.WriteLine("Fine, don't ask a question!");
+        MooseSays("Fine, don't ask a question!");
     }
     else
     {
         Random i = new Random();
         int genRand = i.Next(0, responsearray.Length - 1);
-        System.Console.WriteLine(responsearray[genRand]);
+        MooseSays(responsearray[genRand]);
         MagicMoose();
     }
 }
